@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="dhand" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find dhand_description)/urdf/base/base.urdf.xacro"/>
+
+  <!-- =============== Link & Joint =============== -->
+  <link name="world"/>
+  <xacro:dhand_v0 parent="world">
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:dhand_v0>
+
+  <!-- =============== Gazebo =============== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+  
+  <xacro:dhand_gazebo_v0/>
+  
+</robot>

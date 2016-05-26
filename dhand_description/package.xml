@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>dhand_description</name>
+  <version>1.0.0</version>
+  <description>The dhand_description package</description>
+
+  <maintainer email="groadpg@gmail.com">RyodoTanaka</maintainer>
+  <license>BSD</license>
+  <url type="repository">http://github.com/Nishida-Lab/dhand_ros_pkg</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+</package>
