@@ -15,12 +15,12 @@
       <visual>
         <material name="blue"/>
         <geometry>
-          <mesh filename="package://dhand_description/meshes/base/base.dae"/>
+          <mesh filename="package://dhand_description/meshes/visual/base/base.dae"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dhand_description/meshes/base/base.dae"/>
+          <mesh filename="package://dhand_description/meshes/collision/base/base.stl"/>
         </geometry>
       </collision>
       <inertial>
