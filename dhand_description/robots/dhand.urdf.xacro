@@ -2,6 +2,7 @@
 <robot name="dhand" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:include filename="$(find dhand_description)/urdf/common.xacro"/>
+  <xacro:include filename="$(find dhand_description)/urdf/adapter/adapter.urdf.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/base/base.urdf.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/finger/finger.urdf.xacro"/>
 
@@ -32,10 +33,13 @@
   </xacro:property>
   
   <!-- =============== Link & Joint =============== -->
-  <!-- ==== Base ==== -->
+  <!-- ==== Adapter ==== -->
   <link name="world"/>
-  <xacro:dhand_base_v0 parent="world">
-	<origin xyz="0 0 0" rpy="0 0 0"/>
+  <xacro:dhand_adapter_v0 parent="world"/>
+
+  <!-- ==== Base ==== -->
+  <xacro:dhand_base_v0 parent="dhand_adapter_link">
+	<origin xyz="0.028 0 0" rpy="0 0 0"/>
   </xacro:dhand_base_v0>
 
   <!-- ==== finger base ==== -->
