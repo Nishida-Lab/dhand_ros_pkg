@@ -1,13 +1,103 @@
 <?xml version="1.0"?>
 <robot name="dhand" xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <xacro:include filename="$(find dhand_description)/urdf/common.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/base/base.urdf.xacro"/>
+  <xacro:include filename="$(find dhand_description)/urdf/finger/finger.urdf.xacro"/>
 
+  <!-- =============== Inertial Info =============== -->
+  <xacro:property name="finger_base_mass">
+	<mass value="0.04234931"/>
+  </xacro:property>
+  <xacro:property name="finger_middle_mass">
+	<mass value="0.02332939"/>
+  </xacro:property>
+  <xacro:property name="finger_top_mass">
+	<mass value="0.01452790"/>
+  </xacro:property>
+  <xacro:property name="finger_base_inertia">
+	<inertia ixx="0.00003568" ixy="0.00000000" ixz="-0.00001443"
+			 iyy="0.00005208" iyz="0.00000000"
+			 izz="0.00002108" />
+  </xacro:property>
+  <xacro:property name="finger_middle_inertia">
+	<inertia ixx="0.00001418" ixy="0.00000220" ixz="0.00000000"
+			 iyy="0.00000361" iyz="0.00000004"
+			 izz="0.00001530" />
+  </xacro:property>
+  <xacro:property name="finger_top_inertia">
+	<inertia ixx="0.00001842" ixy="0.00000139" ixz="0.00000000"
+			 iyy="0.00000096" iyz="0.00000000"
+			 izz="0.00001830" />
+  </xacro:property>
+  
   <!-- =============== Link & Joint =============== -->
+  <!-- ==== Base ==== -->
   <link name="world"/>
-  <xacro:dhand_v0 parent="world">
+  <xacro:dhand_base_v0 parent="world">
 	<origin xyz="0 0 0" rpy="0 0 0"/>
-  </xacro:dhand_v0>
+  </xacro:dhand_base_v0>
+
+  <!-- ==== finger base ==== -->
+  <xacro:dhand_fixed_finger_base/>
+  
+  <xacro:dhand_finger_v0 parent="dhand_base_link" prefix="base" side="right">
+  	<origin xyz="0.1865 -0.025964675 -0.01505875" rpy="${90*M_PI/180} 0 ${90*M_PI/180}"/>
+  	<axis xyz="0 0 1"/>
+  	<insert_block name="finger_base_mass"/>
+  	<insert_block name="finger_base_inertia"/>
+  </xacro:dhand_finger_v0>
+
+  <xacro:dhand_finger_v0 parent="dhand_base_link" prefix="base" side="left">
+  	<origin xyz="0.1865 0.02601464 -0.01494117" rpy="${-90*M_PI/180} 0 ${-90*M_PI/180}"/>
+  	<axis xyz="0 0 1"/>
+  	<insert_block name="finger_base_mass"/>
+  	<insert_block name="finger_base_inertia"/>
+  </xacro:dhand_finger_v0>
+
+  <!--==== finger middle ====-->
+  <xacro:dhand_finger_v0 parent="dhand_finger_base_middle_link" prefix="middle" side="middle">
+  	<origin xyz="-0.0415 0 0.033" rpy="${90*M_PI/180} 0 0"/>
+  	<axis xyz="0 0 -1"/>
+  	<insert_block name="finger_middle_mass"/>
+  	<insert_block name="finger_middle_inertia"/>
+  </xacro:dhand_finger_v0>
+
+  <xacro:dhand_finger_v0 parent="dhand_finger_base_right_link" prefix="middle" side="right">
+  	<origin xyz="-0.0415 0 0.033" rpy="${90*M_PI/180} 0 0"/>
+  	<axis xyz="0 0 -1"/>
+  	<insert_block name="finger_middle_mass"/>
+  	<insert_block name="finger_middle_inertia"/>
+  </xacro:dhand_finger_v0>
+
+  <xacro:dhand_finger_v0 parent="dhand_finger_base_left_link" prefix="middle" side="left">
+  	<origin xyz="-0.0415 0 0.033" rpy="${90*M_PI/180} 0 0"/>
+  	<axis xyz="0 0 -1"/>
+  	<insert_block name="finger_middle_mass"/>
+  	<insert_block name="finger_middle_inertia"/>
+  </xacro:dhand_finger_v0>
+
+  <!-- ==== finger top ==== -->
+  <xacro:dhand_finger_v0 parent="dhand_finger_middle_middle_link" prefix="top" side="middle">
+  	<origin xyz="0.00976095 0.0434937 0.0" rpy="0 0 0"/>
+  	<axis xyz="0 0 -1"/>
+  	<insert_block name="finger_top_mass"/>
+  	<insert_block name="finger_top_inertia"/>
+  </xacro:dhand_finger_v0>
+
+   <xacro:dhand_finger_v0 parent="dhand_finger_middle_right_link" prefix="top" side="right">
+  	<origin xyz="0.00976095 0.0434937 0.0" rpy="0 0 0"/>
+  	<axis xyz="0 0 -1"/>
+  	<insert_block name="finger_top_mass"/>
+  	<insert_block name="finger_top_inertia"/>
+   </xacro:dhand_finger_v0>
+
+    <xacro:dhand_finger_v0 parent="dhand_finger_middle_left_link" prefix="top" side="left">
+  	<origin xyz="0.00976095 0.0434937 0.0" rpy="0 0 0"/>
+  	<axis xyz="0 0 -1"/>
+  	<insert_block name="finger_top_mass"/>
+  	<insert_block name="finger_top_inertia"/>
+  </xacro:dhand_finger_v0>
 
   <!-- =============== Gazebo =============== -->
   <gazebo>
@@ -15,6 +105,6 @@
     </plugin>
   </gazebo>
   
-  <xacro:dhand_gazebo_v0/>
+  <xacro:dhand_base_gazebo_v0/>
   
 </robot>
