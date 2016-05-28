@@ -4,12 +4,14 @@
   <xacro:include filename="$(find dhand_description)/urdf/common.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/finger/finger.gazebo.xacro"/>
   
-  <xacro:macro name="dhand_finger_v0" params="parent prefix side *joint_origin *joint_axis *mass *inertia">
-	<joint name="dhand_finger_${prefix}_${side}_joint" type="continuous">
+  <xacro:macro name="dhand_finger_v0" params="parent prefix side *joint_origin *joint_axis *joint_limit *mass *inertia">
+	<joint name="dhand_finger_${prefix}_${side}_joint" type="revolute">
 	  <insert_block name="joint_origin"/>
 	  <parent link="${parent}"/>
 	  <child link="dhand_finger_${prefix}_${side}_link"/>
 	  <insert_block name="joint_axis"/>
+	  <dynamics damping="0.7" friction="0.7"/>
+	  <insert_block name="joint_limit"/>
 	</joint>
 
 	<link name="dhand_finger_${prefix}_${side}_link">
