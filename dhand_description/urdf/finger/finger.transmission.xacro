@@ -5,11 +5,11 @@
     <transmission name="dhand_finger_${prefix}_${side}_transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="dhand_finger_${prefix}_${side}_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+		<hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="dhand_finger_${prefix}_${side}_motor">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+		<hardwareInterface>PositionJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
   </xacro:macro>
