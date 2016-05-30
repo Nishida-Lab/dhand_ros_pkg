@@ -17,9 +17,9 @@
       </collision>
       <inertial>
         <mass value="0.09444833"/>
-        <inertia ixx="0.00008749" ixy="0.00000000" ixz="0.00000000"
-				 iyy="0.00008142" iyz="0.00000000"
-				 izz="0.00008142" />
+        <inertia ixx="1e-3" ixy="0.00000000" ixz="0.00000000"
+				 iyy="1e-3" iyz="0.00000000"
+				 izz="1e-3" />
       </inertial>
     </link>
   </xacro:macro>

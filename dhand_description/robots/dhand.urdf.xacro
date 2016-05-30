@@ -16,19 +16,19 @@
 	<mass value="0.01452790"/>
   </xacro:property>
   <xacro:property name="finger_base_inertia">
-	<inertia ixx="0.00003568" ixy="0.00000000" ixz="-0.00001443"
-			 iyy="0.00005208" iyz="0.00000000"
-			 izz="0.00002108" />
+	<inertia ixx="1e-3" ixy="0.00000000" ixz="-0.00001443"
+			 iyy="1e-3" iyz="0.00000000"
+			 izz="1e-3" />
   </xacro:property>
   <xacro:property name="finger_middle_inertia">
-	<inertia ixx="0.00001418" ixy="0.00000220" ixz="0.00000000"
-			 iyy="0.00000361" iyz="0.00000004"
-			 izz="0.00001530" />
+	<inertia ixx="1e-3" ixy="0.00000220" ixz="0.00000000"
+			 iyy="1e-3" iyz="0.00000004"
+			 izz="1e-3" />
   </xacro:property>
   <xacro:property name="finger_top_inertia">
-	<inertia ixx="0.00001842" ixy="0.00000139" ixz="0.00000000"
-			 iyy="0.00000096" iyz="0.00000000"
-			 izz="0.00001830" />
+	<inertia ixx="1e-3" ixy="0.00000139" ixz="0.00000000"
+			 iyy="1e-3" iyz="0.00000000"
+			 izz="1e-3" />
   </xacro:property>
   
   <!-- =============== Link & Joint =============== -->
