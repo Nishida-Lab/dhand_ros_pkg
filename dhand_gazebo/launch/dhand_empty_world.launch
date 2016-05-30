@@ -7,7 +7,7 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
-
+  
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
 	<arg name="world_name" value="$(find dhand_gazebo)/worlds/dhand_empty.world"/>
@@ -19,13 +19,13 @@
   </include>
 
   <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description"
+  <param name="dhand/robot_description"
 		 command="$(find xacro)/xacro.py '$(arg model)'" />
   
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-  		args="-urdf -model dhand -param robot_description"/>
-
+  		args="-urdf -model dhand -param dhand/robot_description"/>
+  
   <!-- ros_control motoman launch file -->
   <include file="$(find dhand_control)/launch/dhand_sim_control.launch"/>
 </launch>
