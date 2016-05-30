@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:macro name="dhand_adapter_v0" params="parent">
+	<joint name="dhand_adapter_joint" type="fixed">
+	  <parent link="${parent}"/>
+	  <child link="dhand_adapter_link"/>
+	</joint>
+	
+    <link name="dhand_adapter_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://dhand_description/meshes/visual/adapter/adapter.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://dhand_description/meshes/collision/adapter.STL"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.09444833"/>
+        <inertia ixx="0.00008749" ixy="0.00000000" ixz="0.00000000"
+				 iyy="0.00008142" iyz="0.00000000"
+				 izz="0.00008142" />
+      </inertial>
+    </link>
+</xacro:macro>
+</robot>
