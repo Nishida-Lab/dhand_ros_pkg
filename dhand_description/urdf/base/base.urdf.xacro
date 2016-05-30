@@ -3,13 +3,7 @@
 
   <xacro:include filename="$(find dhand_description)/urdf/base/base.gazebo.xacro"/>
 
-  <xacro:macro name="dhand_base_v0" params="parent *joint_origin">
-	<joint name="dhand_base_joint" type="fixed">
-	  <insert_block name="joint_origin"/>
-	  <parent link="${parent}"/>
-	  <child link="dhand_base_link"/>
-	</joint>
-	
+  <xacro:macro name="dhand_base_v0">
     <link name="dhand_base_link">
       <visual>
         <geometry>
