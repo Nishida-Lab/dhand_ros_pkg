@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-<xacro:macro name="dhand_adapter_v0" params="parent">
-	<joint name="dhand_adapter_joint" type="fixed">
+<xacro:include filename="$(find dhand_description)/urdf/adapter/adapter.gazebo.xacro"/>
+  
+<xacro:macro name="dhand_adapter_v0" params="parent *joint_origin">
+  <joint name="dhand_adapter_joint" type="fixed">
+	  <insert_block name="joint_origin"/>
 	  <parent link="${parent}"/>
 	  <child link="dhand_adapter_link"/>
 	</joint>

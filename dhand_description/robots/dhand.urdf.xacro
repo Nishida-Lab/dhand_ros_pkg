@@ -3,7 +3,6 @@
 
   <xacro:include filename="$(find dhand_description)/urdf/common.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/adapter/adapter.urdf.xacro"/>
-  <xacro:include filename="$(find dhand_description)/urdf/adapter/adapter.gazebo.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/base/base.urdf.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/finger/finger.urdf.xacro"/>
 
@@ -36,7 +35,9 @@
   <!-- =============== Link & Joint =============== -->
   <!-- ==== Adapter ==== -->
   <link name="world"/>
-  <xacro:dhand_adapter_v0 parent="world"/>
+  <xacro:dhand_adapter_v0 parent="world">
+	<origin xyz="0 0 0.005" rpy="0 ${-M_PI/2} 0"/>
+  </xacro:dhand_adapter_v0>
 
   <!-- ==== Base ==== -->
   <xacro:dhand_base_v0 parent="dhand_adapter_link">
@@ -141,6 +142,6 @@
   <xacro:dhand_finger_trans_v0 prefix="middle" side="left"/>
   <xacro:dhand_finger_trans_v0 prefix="top" side="middle"/>
   <xacro:dhand_finger_trans_v0 prefix="top" side="right"/>
-  <xacro:dhand_finger_trans_v0 prefix="top" side="lefg"/>
+  <xacro:dhand_finger_trans_v0 prefix="top" side="left"/>
   
 </robot>
