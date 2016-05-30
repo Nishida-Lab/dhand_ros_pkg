@@ -105,11 +105,6 @@
   </xacro:dhand_finger_v0>
 
   <!-- =============== Gazebo =============== -->
-  <!-- ====== Gazebo Elements ====== -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-    </plugin>
-  </gazebo>
   <!-- ==== Adapter ==== -->
   <xacro:dhand_adapter_gazebo_v0/>
   <!-- ==== Base ==== -->

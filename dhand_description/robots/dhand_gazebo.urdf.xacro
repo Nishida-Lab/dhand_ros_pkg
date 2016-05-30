@@ -9,5 +9,12 @@
 	<parent link="world"/>
 	<child link="dhand_adapter_link"/>
   </joint>
+
+  <!-- ====== Gazebo Elements ====== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+  	  <robotNamespace>dhand</robotNamespace>
+    </plugin>
+  </gazebo>
   
 </robot>
