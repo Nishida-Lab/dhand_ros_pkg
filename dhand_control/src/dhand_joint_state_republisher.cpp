@@ -2,6 +2,7 @@
 #include <sensor_msgs/JointState.h>
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 class DHandJointStateRePublisher{
 public:
@@ -42,7 +43,10 @@ void DHandJointStateRePublisher::jointstateCallback(const sensor_msgs::JointStat
 
   for(int i=0; i<dhand_joint_name.size(); i++){
 	joint_state.name.push_back(dhand_joint_name[i]);
-	joint_state.position.push_back(0);
+	if(i<2)
+	  joint_state.position.push_back(60.0*M_PI/180.0);
+	else
+	  joint_state.position.push_back(0);
 	joint_state.velocity.push_back(0);
 	joint_state.effort.push_back(0);
   }
