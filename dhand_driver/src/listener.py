@@ -35,7 +35,7 @@ class Servo_m :
       time.sleep(1.5)
 
       
-      rospy.Subscriber("floats", Servo_move, self.callback)
+      rospy.Subscriber("/dhand_grasp", Servo_move, self.callback)
       
    
    def callback(self,data):
