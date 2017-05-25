@@ -107,17 +107,17 @@ class Servo:
         return b
 
     def read_alarm(self):
-        # Read the position of the servomotor
+        # Read the alarm
         register=int('0500',16)
         print self.s.read_registers(register,6,functioncode=3)
 
     def read_position_completed(self):
-        # Read the position of the servomotor
+        # Read if the position as been completed
         register=int('9014',16)
         print self.s.read_registers(register,1,functioncode=3)
 
     def read_torque(self):
-        # Read the position of the servomotor
+        # Read the torque of the servomotor
         register=int('900C',16)
         print self.s.read_registers(register,2,functioncode=3)
             
