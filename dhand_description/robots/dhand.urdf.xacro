@@ -4,7 +4,9 @@
   <xacro:include filename="$(find dhand_description)/urdf/common.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/base/base.urdf.xacro"/>
   <xacro:include filename="$(find dhand_description)/urdf/finger/finger.urdf.xacro"/>
+  <xacro:include filename="$(find dhand_description)/urdf/adapter/adapter.urdf.xacro"/>
 
+  
   <!-- =============== Inertial Info =============== -->
   <xacro:property name="finger_base_mass">
 	<mass value="0.04234931"/>
