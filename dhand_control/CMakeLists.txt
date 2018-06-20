@@ -19,7 +19,6 @@ include_directories(
 # Build #
 #########
 add_executable(dhand_joint_state_republisher src/dhand_joint_state_republisher.cpp)
-add_dependencies(dhand_joint_state_republisher dhand_joint_state_republisher_cpp)
 target_link_libraries(dhand_joint_state_republisher
   ${catkin_LIBRARIES}
   )
