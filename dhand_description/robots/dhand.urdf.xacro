@@ -44,16 +44,16 @@
   	<origin xyz="0.1865 -0.025964675 -0.01505875" rpy="${180*M_PI/180} ${-90*M_PI/180} 0"/>
   	<axis xyz="0 0 1"/>
 	<limit effort="10.0" lower="${-120*M_PI/180}" upper="0.0" velocity="10.0"/>
-  	<insert_block name="finger_base_mass"/>
-  	<insert_block name="finger_base_inertia"/>
+  	<xacro:insert_block name="finger_base_mass"/>
+  	<xacro:insert_block name="finger_base_inertia"/>
   </xacro:dhand_finger_v0>
 
   <xacro:dhand_finger_v0 parent="dhand_base_link" prefix="base" side="left">
   	<origin xyz="0.1865 0.02601464 -0.01494117" rpy="${-180*M_PI/180} ${-90*M_PI/180} 0"/>
   	<axis xyz="0 0 1"/>
 	<limit effort="10.0" lower="0.0" upper="${120*M_PI/180}" velocity="10.0"/>
-  	<insert_block name="finger_base_mass"/>
-  	<insert_block name="finger_base_inertia"/>
+  	<xacro:insert_block name="finger_base_mass"/>
+  	<xacro:insert_block name="finger_base_inertia"/>
   </xacro:dhand_finger_v0>
 
   <!--==== finger middle ====-->
@@ -61,24 +61,24 @@
   	<origin xyz="-0.0415 0 0.033" rpy="${90*M_PI/180} 0 0"/>
   	<axis xyz="0 0 -1"/>
 	<limit effort="10.0" lower="0.0" upper="0.02" velocity="10.0"/>
-  	<insert_block name="finger_middle_mass"/>
-  	<insert_block name="finger_middle_inertia"/>
+  	<xacro:insert_block name="finger_middle_mass"/>
+  	<xacro:insert_block name="finger_middle_inertia"/>
   </xacro:dhand_finger_v0>
 
   <xacro:dhand_finger_v0 parent="dhand_finger_base_right_link" prefix="middle" side="right">
   	<origin xyz="-0.0415 0 0.033" rpy="${90*M_PI/180} 0 0"/>
   	<axis xyz="0 0 -1"/>
 	<limit effort="10.0" lower="0.0" upper="0.02" velocity="10.0"/>
-  	<insert_block name="finger_middle_mass"/>
-  	<insert_block name="finger_middle_inertia"/>
+  	<xacro:insert_block name="finger_middle_mass"/>
+  	<xacro:insert_block name="finger_middle_inertia"/>
   </xacro:dhand_finger_v0>
 
   <xacro:dhand_finger_v0 parent="dhand_finger_base_left_link" prefix="middle" side="left">
   	<origin xyz="-0.0415 0 0.033" rpy="${90*M_PI/180} 0 0"/>
   	<axis xyz="0 0 -1"/>
 	<limit effort="10.0" lower="0.0" upper="0.02" velocity="10.0"/>
-  	<insert_block name="finger_middle_mass"/>
-  	<insert_block name="finger_middle_inertia"/>
+  	<xacro:insert_block name="finger_middle_mass"/>
+  	<xacro:insert_block name="finger_middle_inertia"/>
   </xacro:dhand_finger_v0>
 
   <!-- ==== finger top ==== -->
@@ -86,24 +86,24 @@
   	<origin xyz="0.00976095 0.0434937 0.0" rpy="0 0 0"/>
   	<axis xyz="0 0 -1"/>
 	<limit effort="10.0" lower="0.0" upper="1.40" velocity="10.0"/>
-  	<insert_block name="finger_top_mass"/>
-  	<insert_block name="finger_top_inertia"/>
+  	<xacro:insert_block name="finger_top_mass"/>
+  	<xacro:insert_block name="finger_top_inertia"/>
   </xacro:dhand_finger_v0>
 
   <xacro:dhand_finger_v0 parent="dhand_finger_middle_right_link" prefix="top" side="right">
   	<origin xyz="0.00976095 0.0434937 0.0" rpy="0 0 0"/>
   	<axis xyz="0 0 -1"/>
 	<limit effort="10.0" lower="0.0" upper="1.40" velocity="10.0"/>
-  	<insert_block name="finger_top_mass"/>
-  	<insert_block name="finger_top_inertia"/>
+  	<xacro:insert_block name="finger_top_mass"/>
+  	<xacro:insert_block name="finger_top_inertia"/>
   </xacro:dhand_finger_v0>
 
   <xacro:dhand_finger_v0 parent="dhand_finger_middle_left_link" prefix="top" side="left">
   	<origin xyz="0.00976095 0.0434937 0.0" rpy="0 0 0"/>
   	<axis xyz="0 0 -1"/>
 	<limit effort="10.0" lower="0.0" upper="1.40" velocity="10.0"/>
-  	<insert_block name="finger_top_mass"/>
-  	<insert_block name="finger_top_inertia"/>
+  	<xacro:insert_block name="finger_top_mass"/>
+  	<xacro:insert_block name="finger_top_inertia"/>
   </xacro:dhand_finger_v0>
 
   <!-- =============== Gazebo =============== -->
