@@ -16,6 +16,7 @@ generate_messages(
  )
 
 catkin_package(
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS std_msgs message_runtime
 )
 
