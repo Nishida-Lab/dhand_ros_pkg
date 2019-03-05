@@ -5,6 +5,11 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
 )
 
-include_directories(
-  ${catkin_INCLUDE_DIRS}
+catkin_package(
+  LIBRARIES ${PROJECT_NAME}
 )
+
+catkin_install_python(PROGRAMS src/driver.py src/listener.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+

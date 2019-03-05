@@ -4,7 +4,10 @@ find_package(catkin REQUIRED COMPONENTS
   joint_state_publisher
   robot_state_publisher
 )
-catkin_package()
+
+catkin_package(
+  LIBRARIES ${PROJECT_NAME}
+)
 
 ###########
 # Install #

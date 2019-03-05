@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>dhand_ros_pkg</name>
   <version>1.0.0</version>
   <description>The dhand_ros_pkg package</description>
@@ -8,8 +8,13 @@
   <license>BSD</license>
   <url type="repository">http://github.com/Nishida-Lab/dhand_ros_pkg</url>
   <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>dhand_control</exec_depend>
+  <exec_depend>dhand_description</exec_depend>
+  <exec_depend>dhand_driver</exec_depend>
+  <exec_depend>dhand_gazebo</exec_depend>
+  <exec_depend>dhand_msgs</exec_depend>
 
   <export>
-	<metapackage />
+    <metapackage />
   </export>
 </package>
